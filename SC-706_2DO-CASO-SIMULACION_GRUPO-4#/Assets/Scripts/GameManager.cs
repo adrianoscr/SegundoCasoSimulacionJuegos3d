@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
     //Flag
     bool hasLost = false;
 
+    public bool abrirPuerta;
+
     // Update is called once per frame
     void Update()
     {
@@ -59,4 +61,8 @@ public class GameManager : MonoBehaviour
     
     }
 
+
+    public void ActivacionSalida() {
+        abrirPuerta = true;
+    }
 }

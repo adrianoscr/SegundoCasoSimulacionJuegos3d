@@ -10,6 +10,11 @@ public class MenuManager : MonoBehaviour
 
     public void StartGame()
     {
+        if (Time.timeScale <= 0.0F)
+        {
+            Time.timeScale = 1f;
+        }
+
         SceneManager.LoadScene(gameScene);
     }
 }

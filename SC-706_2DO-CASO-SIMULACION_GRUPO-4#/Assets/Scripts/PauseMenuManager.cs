@@ -46,11 +46,14 @@ public class PauseMenuManager : MonoBehaviour
 
     public void ReturnMainMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(mainMenu);
+        
     }
 
     public void RestartGame()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

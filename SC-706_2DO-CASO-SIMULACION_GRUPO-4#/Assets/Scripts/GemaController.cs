@@ -19,7 +19,6 @@ public class GemaController : MonoBehaviour
     {
 
 
-
         if (other.CompareTag("Player"))
         {
 
