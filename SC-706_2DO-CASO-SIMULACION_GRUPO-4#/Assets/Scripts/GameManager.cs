@@ -16,6 +16,11 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI timerText;
 
+    [SerializeField]
+    TextMeshProUGUI contadorGemas;
+
+    int gemasContador = 0;
+
     //Tiempo total antes de perder
     float timer = 120.0f;
 
@@ -42,4 +47,16 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1f;
         }
     }
+
+    public void AddScoreGema(int puntoAumento) {
+
+        if (puntoAumento >= 1) {
+
+            gemasContador += puntoAumento;
+            contadorGemas.text = "Gemas recolectadas: " + gemasContador;
+
+        }
+    
+    }
+
 }
