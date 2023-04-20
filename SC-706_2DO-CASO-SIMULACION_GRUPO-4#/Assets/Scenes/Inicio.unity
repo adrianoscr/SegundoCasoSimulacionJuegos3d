@@ -7170,7 +7170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkFactor: 5
   runFactor: 5
-  rotationFactor: 10
+  rotationFactor: 100
   gravityMultiplier: 3
   jumpForce: 8
   maximunNumberOfJumps: 2

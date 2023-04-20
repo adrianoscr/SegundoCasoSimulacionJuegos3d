@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     float runFactor = 5.0F;
 
     [SerializeField]
-    float rotationFactor = 10.0F;
+    float rotationFactor = 100.0F;
 
 
     [Header("Jump")]
@@ -136,21 +136,21 @@ public class PlayerController : MonoBehaviour
         //MOVIMIENTO UNIFORME DURANTE EL TIEMPO
         character.Move(velocity * Time.deltaTime);
     }
+
+
     void handleRotation()
     {
-
         if (isMovePressed)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(direccion, Vector3.up);
+            float horizontalInput = Input.GetAxis("Horizontal");
 
-            // Si el personaje va hacia atrás, mantener la rotación actual
-            if (inputZ < 0)
+            if (isMovePressed)
             {
-                targetRotation = transform.rotation;
+                if (horizontalInput != 0)
+                {
+                    transform.Rotate(Vector3.up, horizontalInput * rotationFactor * Time.deltaTime);
+                }
             }
-
-            transform.rotation =
-                Quaternion.Slerp(transform.rotation, targetRotation, rotationFactor * Time.deltaTime);
         }
     }
 
@@ -158,6 +158,7 @@ public class PlayerController : MonoBehaviour
     {
         return character.isGrounded;
     }
+
 
     IEnumerator WaitForGroundCorutine()
     {
